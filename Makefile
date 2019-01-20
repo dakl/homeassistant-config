@@ -1,15 +1,18 @@
-build:
-	docker build -t dakl/home-assistant .
+HASS_VERSION=0.85.1
+HASS_IMAGE=homeassistant/raspberrypi3-homeassistant
+# HASS_IMAGE=homeassistant/home-assistant
+HASS_IMAGE_TAGNAME=$(HASS_IMAGE):$(HASS_VERSION)
 
-push:
-	docker push dakl/home-assistant
-
-run:
+start:
+	git submodule update --recursive --remote
+	docker pull ${HASS_IMAGE_TAGNAME}
 	docker run --rm --name hassio \
-	-e "TZ=Europe/Stockholm" \
-	-v ${PWD}/config:/config \
-	-p 8123:8123 \
-	homeassistant/home-assistant:0.85.1
+		-d \
+		-e "TZ=Europe/Stockholm" \
+		-v ${PWD}/config:/config \
+		-p 8123:8123 \
+		${HASS_IMAGE_TAGNAME}
+
 
 test: 
 	docker run --rm -it \
@@ -17,5 +20,5 @@ test:
 	-v ${PWD}/config/configuration.yaml:/config/configuration.yaml \
 	-v ${PWD}/config/secrets.yaml:/config/secrets.yaml \
 	-p 8123:8123 \
-	homeassistant/home-assistant:0.85.1 \
+	${HASS_IMAGE_TAGNAME} \
 	python -m homeassistant --script check_config -c /config
