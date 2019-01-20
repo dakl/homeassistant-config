@@ -4,8 +4,8 @@ HASS_IMAGE=homeassistant/raspberrypi3-homeassistant
 HASS_IMAGE_TAGNAME=$(HASS_IMAGE):$(HASS_VERSION)
 
 start:
-	docker stop hassio
-	docker rm hassio
+	docker stop hassio || true
+	docker rm hassio || true
 	docker pull ${HASS_IMAGE_TAGNAME}
 	docker run --name hassio --restart unless-stopped \
 		-d \
