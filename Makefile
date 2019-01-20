@@ -4,8 +4,10 @@ HASS_IMAGE=homeassistant/raspberrypi3-homeassistant
 HASS_IMAGE_TAGNAME=$(HASS_IMAGE):$(HASS_VERSION)
 
 start:
+	docker stop hassio
+	docker rm hassio
 	docker pull ${HASS_IMAGE_TAGNAME}
-	docker run --rm --name hassio \
+	docker run --rm --name hassio --restart unless-stopped \
 		-d \
 		-e "TZ=Europe/Stockholm" \
 		-v ${PWD}/config/configuration.yaml:/config/configuration.yaml \
