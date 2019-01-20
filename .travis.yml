@@ -1,0 +1,8 @@
+language: bash
+
+services:
+  - docker
+
+script:
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+  - make test
