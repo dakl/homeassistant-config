@@ -19,6 +19,5 @@ test:
 	-e "TZ=Europe/Stockholm" \
 	-v ${PWD}/config/configuration.yaml:/config/configuration.yaml \
 	-v ${PWD}/config/secrets.yaml:/config/secrets.yaml \
-	-p 8123:8123 \
 	${HASS_IMAGE_TAGNAME} \
 	python -m homeassistant --script check_config -c /config
