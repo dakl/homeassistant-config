@@ -7,7 +7,7 @@ start:
 	docker stop hassio
 	docker rm hassio
 	docker pull ${HASS_IMAGE_TAGNAME}
-	docker run --rm --name hassio --restart unless-stopped \
+	docker run --name hassio --restart unless-stopped \
 		-d \
 		-e "TZ=Europe/Stockholm" \
 		-v ${PWD}/config/configuration.yaml:/config/configuration.yaml \
