@@ -4,14 +4,15 @@ HASS_IMAGE=homeassistant/raspberrypi3-homeassistant
 HASS_IMAGE_TAGNAME=$(HASS_IMAGE):$(HASS_VERSION)
 
 start:
-	docker stop hassio || true
-	docker rm hassio || true
+	docker stop hassio 2> /dev/null || echo "No container to stop, skipping..."
+	docker rm hassio 2> /dev/null || echo "No container to remove, skipping..."
 	docker pull ${HASS_IMAGE_TAGNAME}
 	docker run --name hassio --restart unless-stopped \
-		-d \
 		-e "TZ=Europe/Stockholm" \
 		-v ${PWD}/config/configuration.yaml:/config/configuration.yaml \
 		-v ${PWD}/config/secrets.yaml:/config/secrets.yaml \
+		--mount source=hassio-cloud,target=/config/.cloud \
+		--mount source=hassio-storage,target=/config/.storage \
 		-p 8123:8123 \
 		${HASS_IMAGE_TAGNAME}
 
