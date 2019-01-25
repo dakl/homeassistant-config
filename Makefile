@@ -9,6 +9,7 @@ start:
 	docker pull ${HASS_IMAGE_TAGNAME}
 	docker run --name hassio --restart unless-stopped \
 		-e "TZ=Europe/Stockholm" \
+		-d \
 		-v ${PWD}/config/configuration.yaml:/config/configuration.yaml \
 		-v ${PWD}/config/secrets.yaml:/config/secrets.yaml \
 		--mount source=hassio-cloud,target=/config/.cloud \
