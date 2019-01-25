@@ -64,6 +64,8 @@ tts:
 # Cloud
 cloud:
 
+lovelace:
+
 #group: !include groups.yaml
 #automation: !include automations.yaml
 #script: !include scripts.yaml
@@ -108,6 +110,16 @@ light:
     name: Restaurangens utebelysning
     command_topic: "commands/relay/8"
     state_topic: "events/relay/8"
+
+  - platform: mqtt
+    name: Bakom TVn
+    schema: json
+    unique_id: tvbacklight
+    command_topic: "commands/tvbacklight"
+    rgb_state_topic: "events/tvbacklight/rgb"
+    brightness_state_topic: "events/tvbacklight/brightness"
+    rgb: true
+    brightness: true
 
 # light:
 #   - platform: group
