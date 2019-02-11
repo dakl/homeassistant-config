@@ -72,6 +72,9 @@ homekit:
 #automation: !include automations.yaml
 #script: !include scripts.yaml
 
+influxdb:
+  host: worker0
+
 mqtt:
   broker: worker0
 
