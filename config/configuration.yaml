@@ -131,6 +131,11 @@ sensor:
     name: "Outside temperature"
     unit_of_measurement: '°C'
 
+binary_sensor:
+  - platform: mqtt
+    state_topic: "events/movement"
+    name: "Rörelsesensorn"
+
 # light:
 #   - platform: group
 #     name: Window Lights
