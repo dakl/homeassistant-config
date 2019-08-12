@@ -15,10 +15,10 @@ homeassistant:
   # Customization file
   # customize: !include customize.yaml
 
-device_tracker:
-  - platform: icloud
-    username: !secret icloud_user
-    password: !secret icloud_password
+# device_tracker:
+#   - platform: icloud
+#     username: !secret icloud_user
+#     password: !secret icloud_password
 
 # Enables the frontend
 frontend:
