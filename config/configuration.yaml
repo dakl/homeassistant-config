@@ -15,6 +15,11 @@ homeassistant:
   # Customization file
   # customize: !include customize.yaml
 
+device_tracker:
+  - platform: icloud
+    username: !secret icloud_user
+    password: !secret icloud_password
+
 # Enables the frontend
 frontend:
 
@@ -67,8 +72,8 @@ homekit:
 #automation: !include automations.yaml
 #script: !include scripts.yaml
 
-influxdb:
-  host: worker0
+#influxdb:
+#  host: worker0
 
 mqtt:
   broker: worker0
@@ -143,3 +148,12 @@ binary_sensor:
 #       - light.lyktan
 #       - light.skomakarlampporna
 #       - light.jordgloben
+camera:
+  - platform: mjpeg
+    name: Livingroom Camera
+    username: pi
+    password: !secret picam_password
+    mjpeg_url: http://worker0:8000/stream.mjpg
+    verify_ssl: false
+    authentication: basic
+
