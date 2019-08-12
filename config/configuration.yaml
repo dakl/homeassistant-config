@@ -100,22 +100,22 @@ light:
     command_topic: "commands/relay/4"
     state_topic: "events/relay/4"
 
-  - platform: mqtt
-    name: Inne hos detektiven
-    command_topic: "commands/lego/1"
-    state_topic: "events/lego/1"
-  - platform: mqtt
-    name: Detektivens utebelysning
-    command_topic: "commands/lego/2"
-    state_topic: "events/lego/2"
-  - platform: mqtt
-    name: Inne i restaurangen
-    command_topic: "commands/lego/3"
-    state_topic: "events/lego/3"
-  - platform: mqtt
-    name: Restaurangens utebelysning
-    command_topic: "commands/lego/4"
-    state_topic: "events/lego/4"
+  #  - platform: mqtt
+  # name: Inne hos detektiven
+  # command_topic: "commands/lego/1"
+  # state_topic: "events/lego/1"
+  #- platform: mqtt
+  #  name: Detektivens utebelysning
+  #  command_topic: "commands/lego/2"
+  #  state_topic: "events/lego/2"
+  #- platform: mqtt
+  #  name: Inne i restaurangen
+  #  command_topic: "commands/lego/3"
+  #  state_topic: "events/lego/3"
+  #- platform: mqtt
+  #  name: Restaurangens utebelysning
+  #  command_topic: "commands/lego/4"
+  #  state_topic: "events/lego/4"
 
   - platform: mqtt
     name: Bakom TVn
@@ -140,20 +140,4 @@ binary_sensor:
   - platform: mqtt
     state_topic: "events/movement"
     name: "Rörelsesensorn"
-
-# light:
-#   - platform: group
-#     name: Window Lights
-#     entities:
-#       - light.lyktan
-#       - light.skomakarlampporna
-#       - light.jordgloben
-camera:
-  - platform: mjpeg
-    name: Livingroom Camera
-    username: pi
-    password: !secret picam_password
-    mjpeg_url: http://worker0:8000/stream.mjpg
-    verify_ssl: false
-    authentication: basic
 
