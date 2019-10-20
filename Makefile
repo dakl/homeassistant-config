@@ -15,6 +15,5 @@ test:
 	docker run --rm -it \
 	-e "TZ=Europe/Stockholm" \
 	-v ${PWD}/configuration.yaml:/config/configuration.yaml \
-	-v ${PWD}/secrets.yaml:/config/secrets.yaml \
 	${HASS_IMAGE_TAGNAME} \
 	python -m homeassistant --script check_config -c /config
