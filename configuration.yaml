@@ -113,15 +113,15 @@ light:
   #  command_topic: "commands/lego/4"
   #  state_topic: "events/lego/4"
 
-  - platform: mqtt
-    name: Bakom TVn
-    schema: json
-    unique_id: tvbacklight
-    command_topic: "commands/tvbacklight"
-    rgb_state_topic: "events/tvbacklight/rgb"
-    brightness_state_topic: "events/tvbacklight/brightness"
-    rgb: true
-    brightness: true
+  # - platform: mqtt
+  #   name: Bakom TVn
+  #   schema: json
+  #   unique_id: tvbacklight
+  #   command_topic: "commands/tvbacklight"
+  #   rgb_state_topic: "events/tvbacklight/rgb"
+  #   brightness_state_topic: "events/tvbacklight/brightness"
+  #   rgb: true
+  #   brightness: true
 
 sensor:
   - platform: yr
