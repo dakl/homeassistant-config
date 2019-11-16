@@ -13,6 +13,8 @@ logbook:
 cloud:
 lovelace:
 homekit:
+homekit:
+  name: "Klevans Hassio"
 system_health:
 
 mqtt:
