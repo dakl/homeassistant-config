@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  mosqitto:
+    container_name: mosqitto
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:latest
+    volumes:
+      - ./configuration.yaml:/config/configuration.yaml
+      - ./dummy-secrets.yaml:/config/secrets.yaml
+    environment:
+      - TZ=Europe/Stockholm
+    restart: always
+    ports:
+      - 8123:8123
