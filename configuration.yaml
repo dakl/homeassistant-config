@@ -47,6 +47,9 @@ light:
     command_topic: "commands/tvbacklight"
     rgb: true
     brightness: true
+    effect: true
+    effect_list:
+      - colorloop
 
 sensor:
   - platform: yr
