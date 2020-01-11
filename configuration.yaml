@@ -16,7 +16,7 @@ homekit:
 system_health:
 
 mqtt:
-  broker: hassio
+  broker: !secret mqtt_broker
 
 # Example configuration.yaml entry
 light:
