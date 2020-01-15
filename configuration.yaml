@@ -48,10 +48,25 @@ light:
     command_topic: "commands/tvbacklight"
     rgb: true
     brightness: true
-    effect: true
-    effect_list:
-      - colorloop
 
+switch:
+  - platform: mqtt
+    name: tvbacklight party
+    icon: mdi:party-popper
+    command_topic: commands/tvbacklight-rainbow
+
+automation:
+  - trigger:
+      platform: mqtt
+      topic: commands/tvbacklight-rainbow
+      payload: "ON"
+    action:
+      - delay:
+          milliseconds: 500
+      - service:
+          switch.turn_off
+        entity_id: switch.tvbacklight_party
+    
 sensor:
   - platform: yr
 
