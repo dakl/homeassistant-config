@@ -51,15 +51,17 @@ light:
 
 switch:
   - platform: mqtt
-    name: tvbacklight party
+    name: tvbacklight_party
     icon: mdi:party-popper
-    command_topic: commands/tvbacklight-rainbow
+    command_topic: commands/tvbacklight
+    payload_on: '{"state": "rainbow"}'
+    payload_off: '{"state": "ignore"}'
 
 automation:
   - trigger:
       platform: mqtt
-      topic: commands/tvbacklight-rainbow
-      payload: "ON"
+      topic: commands/tvbacklight
+      payload: '{"state": "rainbow"}'
     action:
       - delay:
           milliseconds: 500
