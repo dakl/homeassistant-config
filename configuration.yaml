@@ -31,10 +31,11 @@ light:
     unique_id: skomakarlamporna
     command_topic: "commands/relay/2"
     state_topic: "events/relay/2"
-  # - platform: mqtt
-  #   name: switch 3
-  #   command_topic: "commands/relay/3"
-  #   state_topic: "events/relay/3"
+  - platform: mqtt
+    name: Skåpet
+    unique_id: skapet
+    command_topic: "commands/relay/3"
+    state_topic: "events/relay/3"
   - platform: mqtt
     name: Jordgloben
     unique_id: jordgloben
