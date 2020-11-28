@@ -1,0 +1,33 @@
+homeassistant:
+  name: Klevans Home
+  elevation: 17
+  unit_system: metric
+  time_zone: Europe/Stockholm
+
+frontend:
+#  themes: !include_dir_merge_named themes
+config:
+updater:
+discovery:
+history:
+logbook:
+cloud:
+lovelace:
+  mode: yaml
+zeroconf:
+homekit:
+  name: "Klevans Hassio"
+system_health:
+tradfri:
+  host: !secret tradfri_gateway_ip
+mqtt:
+  broker: !secret mqtt_broker
+
+light: !include lights.yaml
+sensor: !include sensors.yaml
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "events/movement"
+    name: "Rörelsesensorn"
+    off_delay: 0

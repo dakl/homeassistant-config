@@ -1,0 +1,73 @@
+title: Klevans Home
+views:
+  - path: default_view
+    icon: 'mdi:home'
+    panel: false
+    title: Home
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.vanster_klot
+            icon: 'mdi:globe-light'
+            name: Vänster klot
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.matbordet
+            name: Matbordet
+            icon: 'mdi:ceiling-light'
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.hoger_klot
+            name: Höger klot
+            icon: 'mdi:globe-light'
+      - entity: weather.home
+        type: weather-forecast
+        name: Hägersten
+        show_forecast: false
+        secondary_info_attribute: wind_speed
+      - type: horizontal-stack
+        cards:
+          - type: light
+            entity: light.taklampan
+          - type: light
+            entity: light.bakom_tvn
+            icon: 'mdi:television'
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.balkongen
+            icon: 'mdi:string-lights'
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: light.jordgloben
+                show_state: false
+                icon: 'mdi:earth'
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: light.skomakarlamporna
+                icon: 'mdi:ceiling-light'
+          - type: horizontal-stack
+            cards:
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: light.skapet
+                icon: 'mdi:lightbulb-group'
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: light.lyktan
+                show_icon: false
+                show_name: false
+                name: Unused

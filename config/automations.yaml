@@ -1,0 +1,12 @@
+automation:
+  - trigger:
+      platform: mqtt
+      topic: commands/tvbacklight
+      payload: '{"state": "rainbow"}'
+    action:
+      - delay:
+          milliseconds: 500
+      - service:
+          switch.turn_off
+        entity_id: switch.tvbacklight_party
+    

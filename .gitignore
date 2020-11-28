@@ -3,3 +3,5 @@
 .pip_progress
 .uuid
 home-assistant*
+config/.cloud
+config/deps

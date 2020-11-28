@@ -12,7 +12,7 @@ services:
     container_name: homeassistant
     image: homeassistant/home-assistant:latest
     volumes:
-      - ./configuration.yaml:/config/configuration.yaml
+      - ./config:/config
       - ./dummy-secrets.yaml:/config/secrets.yaml
     environment:
       - TZ=Europe/Stockholm

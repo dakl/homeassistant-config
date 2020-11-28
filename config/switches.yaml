@@ -1,0 +1,7 @@
+switch:
+  - platform: mqtt
+    name: tvbacklight_party
+    icon: mdi:party-popper
+    command_topic: commands/tvbacklight
+    payload_on: '{"state": "rainbow"}'
+    payload_off: '{"state": "ignore"}'
