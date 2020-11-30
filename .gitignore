@@ -5,3 +5,4 @@
 home-assistant*
 config/.cloud
 config/deps
+config/secrets.yaml
