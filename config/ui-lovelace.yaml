@@ -64,10 +64,10 @@ views:
                   action: toggle
                 entity: light.skapet
                 icon: 'mdi:lightbulb-group'
+                name: Skåpet
               - type: button
                 tap_action:
                   action: toggle
                 entity: light.lyktan
-                show_icon: false
-                show_name: false
-                name: Unused
+                icon: 'mdi:star-outline'
+                name: Julstjärnan
