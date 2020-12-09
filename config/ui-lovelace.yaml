@@ -10,7 +10,7 @@ views:
       title: Dimmers
       icon: mdi:floor-lamp
       brightnessWidth: 100px
-      brightnessHeight: 300px
+      brightnessHeight: 150px
 
       entities:
         - entity: light.kloten
