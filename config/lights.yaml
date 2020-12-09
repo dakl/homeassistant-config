@@ -34,3 +34,8 @@
       - light.taklampa_2
       - light.taklampa_3
 
+  - platform: group
+    name: Kloten
+    entities:
+      - light.hoger_klot
+      - light.vanster_klot

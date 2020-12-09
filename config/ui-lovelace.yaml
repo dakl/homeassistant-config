@@ -1,5 +1,33 @@
+
 title: Klevans Home
+
 views:
+  - path: second
+    icon: 'mdi:floor-lamp'
+    panel: true
+    cards:
+    - type: "custom:custom-smart-home-panel-card"
+      title: Dimmers
+      icon: mdi:floor-lamp
+      brightnessWidth: 100px
+      brightnessHeight: 300px
+
+      entities:
+        - entity: light.kloten
+        - entity: light.matbordet
+          name: Matbordet
+        - entity: light.taklampan
+        - entity: light.bakom_tvn
+        - entity: light.ljuskronan
+        # - entity: light.skomakarlamporna
+        # - entity: light.jordgloben
+        # - entity: light.lyktan
+        #   name: Julstjärnan
+        # - entity: light.skapet
+        #   name: Skåpet
+                
+
+
   - path: default_view
     icon: 'mdi:home'
     panel: false
